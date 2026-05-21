@@ -1,0 +1,65 @@
+# ═══════════════════════════════════════════════════════════════
+#   TownyElectionsReloaded  |  config.yml
+#   Maintained by: skyttffxx  |  Original plugin by: aurgiyalgo
+# ═══════════════════════════════════════════════════════════════
+
+# Language file to use (must exist in the plugin's data folder)
+language: en-US
+
+# ── Election Duration ────────────────────────────────────────
+# All values are in MINUTES.
+# Maximum duration allowed for an election (default: 10080 = 7 days)
+max-duration: 10080
+# Minimum duration required for an election (default: 60 = 1 hour)
+min-duration: 60
+
+# ── Election Cooldown ────────────────────────────────────────
+# Minimum time (minutes) that must pass between elections for the
+# same town/nation. Set to 0 to disable.
+election-cooldown: 0
+
+# ── Quorum Requirement ───────────────────────────────────────
+# Minimum percentage (0–100) of eligible residents that must vote
+# for the election result to be valid. If turnout falls below this
+# threshold the election ends with no winner. Set to 0 to disable.
+quorum-percentage: 0
+
+# ── Term Limits ──────────────────────────────────────────────
+# Maximum consecutive wins allowed for a single party per territory.
+# Once reached, that party is ineligible to run in the next election.
+# Set to 0 to disable.
+term-limits: 0
+
+# ── Campaign Period ──────────────────────────────────────────
+# Duration (minutes) of a campaign window before voting opens.
+# Parties can set their motto during this time; votes are locked.
+# Set to 0 to disable.
+campaign-duration: 0
+
+# ── Election Reminders ───────────────────────────────────────
+# Broadcast a reminder to the territory N minutes before the
+# election ends. Add as many thresholds as you like.
+# Remove all entries (or leave blank) to disable reminders.
+reminders:
+  - 60
+  - 10
+
+# ── Anonymous Voting ─────────────────────────────────────────
+# When true, /elections list hides individual vote counts during
+# the election. Results are only revealed when the election ends.
+anonymous-voting: false
+
+# ── Economy Fee (requires Vault) ─────────────────────────────
+# Amount deducted from the player who calls /elections convoke.
+# Requires a Vault-compatible economy plugin installed.
+# Set to 0.0 to disable.
+election-fee: 0.0
+
+# ── Discord Webhook ──────────────────────────────────────────
+# Post notifications to a Discord channel when elections start or
+# end. Paste your webhook URL here; leave empty to disable.
+discord-webhook-url: ''
+
+# ── Debug Mode ───────────────────────────────────────────────
+# Prints extra information to the console. For server admins only.
+debug-mode: false

@@ -1,0 +1,151 @@
+name: TownyElectionsReloaded
+version: ${project.version}_${git.commit.id.abbrev}
+description: A Towny political-party and election plugin. Fork of TownyElections by aurgiyalgo, updated and maintained by skyttffxx.
+authors: [skyttffxx, aurgiyalgo]
+main: me.skyttffxx.townyelectionsreloaded.TownyElections
+depend: [Towny]
+softdepend: [PlaceholderAPI, Vault]
+api-version: 1.21
+commands:
+  townyelections:
+    usage: /<command>
+    aliases: telect
+    permission: townyelections.use
+  elections:
+    usage: <command>
+    permission: townyelections.elections
+  party:
+    usage: /<command>
+    permission: townyelections.party
+    aliases: [p, pty, prty]
+  government:
+    permission: townyelections.government
+    aliases: [gov]
+permissions:
+  townyelections.*:
+    default: op
+    children:
+      townyelections.use: true
+      townyelections.reload: true
+      townyelections.elections.*: true
+      townyelections.party.*: true
+  townyelections.use:
+    default: true
+  townyelections.reload:
+    default: op
+  townyelections.elections:
+    default: true
+  townyelections.party:
+    default: true
+  townyelections.elections.*:
+    default: op
+    children:
+      townyelections.elections.vote.*: true
+      townyelections.elections.convoke.*: true
+      townyelections.elections.list.*: true
+      townyelections.elections.stop.*: true
+      townyelections.elections.unvote.*: true
+  townyelections.parties.*:
+    default: op
+    children:
+      townyelections.party.create.*: true
+      townyelections.party.add.*: true
+      townyelections.party.accept.*: true
+      townyelections.party.invites.*: true
+      townyelections.party.setleader.*: true
+      townyelections.party.promote.*: true
+      townyelections.party.demote.*: true
+      townyelections.party.info.*: true
+  townyelections.elections.vote.*:
+    description: Access to vote command
+    default: op
+    children:
+      townyelections.elections.vote.town: true
+      townyelections.elections.vote.nation: true
+  townyelections.elections.convoke.*:
+    description: Access to convoke command
+    default: op
+    children:
+      townyelections.elections.convoke.town: true
+      townyelections.elections.convoke.nation: true
+  townyelections.elections.list.*:
+    description: Access to list command
+    default: op
+    children:
+      townyelections.elections.list.town: true
+      townyelections.elections.list.nation: true
+  townyelections.elections.stop.*:
+    description: Access to stop command
+    default: op
+    children:
+      townyelections.elections.stop.town: true
+      townyelections.elections.stop.nation: true
+  townyelections.elections.unvote.*:
+    description: Access to unvote command
+    default: op
+    children:
+      townyelections.elections.unvote.town: true
+      townyelections.elections.unvote.nation: true
+  townyelections.party.create.*:
+    description: Access to party create command
+    default: op
+    children:
+      townyelections.party.create.town: true
+      townyelections.party.create.nation: true
+  townyelections.party.leave.*:
+    description: Access to party leave command
+    default: op
+    children:
+      townyelections.party.leave.town: true
+      townyelections.party.leave.nation: true
+  townyelections.party.add.*:
+    description: Access to party add command
+    default: op
+    children:
+      townyelections.party.add.town: true
+      townyelections.party.add.nation: true
+  townyelections.party.invites.*:
+    description: Access to party invites command
+    default: op
+    children:
+      townyelections.party.invites.town: true
+      townyelections.party.invites.nation: true
+  townyelections.party.setleader.*:
+    description: Access to party setleader command
+    default: op
+    children:
+      townyelections.party.setleader.town: true
+      townyelections.party.setleader.nation: true
+  townyelections.party.promote.*:
+    description: Access to party promote command
+    default: op
+    children:
+      townyelections.party.promote.town: true
+      townyelections.party.promote.nation: true
+  townyelections.party.demote.*:
+    description: Access to party demote command
+    default: op
+    children:
+      townyelections.party.demote.town: true
+      townyelections.party.demote.nation: true
+  townyelections.party.info.*:
+    description: Access to party info command
+    default: op
+    children:
+      townyelections.party.info.town: true
+      townyelections.party.info.nation: true
+  townyelections.party.disband.*:
+    description: Access to party disband command
+    default: op
+    children:
+      townyelections.party.disband.town: true
+      townyelections.party.disband.nation: true
+  townyelections.party.setmotto.*:
+    description: Access to party setmotto command
+    default: op
+    children:
+      townyelections.party.setmotto.town: true
+      townyelections.party.setmotto.nation: true
+  townyelections.admin.forceend:
+    description: Force-end any active election
+    default: op

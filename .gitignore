@@ -1,0 +1,10 @@
+.classpath
+.project
+/bin
+/.settings
+/.settings
+/target/
+/.idea
+TownyElections.iml
+/server
+export.sh
