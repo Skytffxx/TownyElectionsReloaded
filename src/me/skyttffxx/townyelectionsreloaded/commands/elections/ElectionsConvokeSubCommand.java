@@ -36,7 +36,7 @@ public class ElectionsConvokeSubCommand extends SubCommand {
 
                 Town t;
                 try {
-                    t = TownyUniverse.getInstance().getResident(player.getName()).getTown();
+                    t = TownyUniverse.getInstance().getResident(player.getUniqueId()).getTown();
                 } catch (NotRegisteredException e) {
                     player.sendMessage(TownyElections.getMessage("not-in-a-town"));
                     return true;
@@ -80,7 +80,7 @@ public class ElectionsConvokeSubCommand extends SubCommand {
 
                 Nation n;
                 try {
-                    n = TownyUniverse.getInstance().getResident(player.getName()).getTown().getNation();
+                    n = TownyUniverse.getInstance().getResident(player.getUniqueId()).getTown().getNation();
                 } catch (NotRegisteredException e) {
                     player.sendMessage(TownyElections.getMessage("not-in-a-nation"));
                     return true;
